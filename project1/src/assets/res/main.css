@@ -1,0 +1,81 @@
+@media (prefers-color-scheme: light) {
+  body {
+    background-color:  #F8F4F2!important;
+    
+  }
+}
+@font-face {
+  font-family: 'CustomFont';
+  src: url('./CascadiaCode-jEZzj.ttf') format('truetype'); /* Replace with actual path and format */
+}
+
+:root{
+--surface-a:#1D2439;
+ --success:#25391df8;
+}
+body{
+  margin: 0; /* Removes default browser margins */
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  height: 100vh;;
+  font-family: "Customfont",'Courier New', Courier, monospace;
+  background-color: #101524;
+  overflow-x: hidden;
+}
+
+.custom-card {
+  background: var(--surface-a);
+}
+
+/* Media query for small screens (e.g., max-width 600px) */
+@media (max-width: 600px) {
+.task-container {
+ width: 19.5rem; /* Align items to the left */
+}
+.p-toast {
+  max-width: 100% !important; /* Full width on very small screens */
+  right: auto !important;  /* Remove right alignment */
+  left: 0 !important;      /* Position toast on the left */
+         /* Position the toast to the right edge */
+}
+body{
+  padding: 0.5rem;
+}
+}
+
+
+/* Additional media queries for other screen sizes if needed */
+@media (min-width: 600px) {
+.task-container {
+  width: 40rem; /* Make the container slightly smaller on medium screens */
+  
+}
+
+
+}
+.circular-checkbox {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.circular-checkbox:checked {
+  background-color: #101113; /* Blue background when checked */
+  border-color: #f5faff;     /* Border turns blue when checked */
+}
+
+.circular-checkbox:checked::after {
+  content: '✔'; /* The tick mark */
+  position: absolute;
+  top: -0.5px;
+  left: 3px;
+  color: white;    /* White tick mark */
+  font-size: 16px;  /* Adjust the size of the tick mark */
+}
